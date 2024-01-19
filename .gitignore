@@ -1,0 +1,7 @@
+__pycache__
+wandb
+lightning_logs
+*.ckpt
+plots/*
+*.npy
+*.pdf
