@@ -3,7 +3,7 @@ import torch
 import torch.nn as nn
 from torch import optim
 import torch.nn.functional as F
-import lightning.pytorch as pl
+import pytorch_lightning as pl
 import torchmetrics
 import wandb
 

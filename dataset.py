@@ -1,9 +1,6 @@
 import glob
-import scipy.io as sio
 import torch
-from torch.utils.data import Dataset, DataLoader
 import numpy as np
-from sklearn.model_selection import train_test_split
 
 
 def UT_HAR_dataset(root_dir):

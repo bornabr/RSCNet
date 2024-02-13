@@ -1,8 +1,6 @@
 import numpy as np
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
-from torchsummary import summary
 
 class EncoderBlock(nn.Module):
 	def __init__(self, input_shape):

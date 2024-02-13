@@ -1,12 +1,12 @@
 import torch
 from torch import nn
 import torch.nn.functional as F
-from lightning.pytorch import Trainer, seed_everything
+from pytorch_lightning import Trainer, seed_everything
 import wandb
-from lightning.pytorch.loggers import WandbLogger
-from lightning.pytorch.callbacks import ModelCheckpoint
+from pytorch_lightning.loggers import WandbLogger
+from pytorch_lightning.callbacks import ModelCheckpoint
 import numpy as np
-import argparse
+import argparselightning
 
 from dataset import data_loader
 from model import RSCNet
