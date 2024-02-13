@@ -1,4 +1,6 @@
-# RSCNet: Dynamic CSI Compression for Cloud-based WiFi Sensing
+## Abstract
+This is the Pytorch implementation of "RSCNet: Dynamic CSI Compression for Cloud-based WiFi Sensing"
+
 ## Abstract
 WiFi-enabled Internet-of-Things (IoT) devices are evolving from mere communication devices to sensing instruments, leveraging Channel State Information (CSI) extraction capabilities. Nevertheless, resource-constrained IoT devices and the intricacies of deep neural networks necessitate transmitting CSI  to cloud servers for sensing. Although feasible, this leads to considerable communication overhead. In this context, this paper develops a novel  Real-time Sensing and Compression Network (RSCNet) which enables sensing with compressed CSI; thereby reducing the communication overheads. RSCNet facilitates optimization across CSI windows composed of a few CSI frames. Once transmitted to cloud servers, it employs Long Short-Term Memory (LSTM) units to harness data from prior windows, thus bolstering both the sensing accuracy and CSI reconstruction. RSCNet adeptly balances the trade-off between CSI compression and sensing precision, thus streamlining real-time cloud-based WiFi sensing with reduced communication costs. Numerical findings demonstrate the gains of RSCNet over the existing benchmarks like SenseFi, showcasing a sensing accuracy of 97.4% with minimal CSI reconstruction error. Numerical results also show a computational analysis of the proposed RSCNet as a function of the number of CSI frames.
 

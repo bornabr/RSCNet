@@ -13,15 +13,15 @@ from model import RSCNet
 
 def get_cfg():
 	parser = argparse.ArgumentParser(description='RSCNet')
-	parser.add_argument('--root_dir', type=str, help='Root directory containing UT_HAR data and label files.')
+	parser.add_argument('--root_dir', type=str, help='Root directory containing UT_HAR dataset folder')
 	parser.add_argument('--debug', action='store_true', help='Enable debug mode')
 	parser.add_argument('--seed', type=int, default=42, help='Random seed')
 	parser.add_argument('--num_workers', type=int, default=24, help='Number of workers for data loading')
 	parser.add_argument('--batch_size', type=int, default=512, help='Batch size for training')
 	parser.add_argument('--epochs', type=int, default=300, help='Number of epochs for training')
-	parser.add_argument('--compression_rate', type=int, default=512, help='Embedding size for encoder')
+	parser.add_argument('--compression_rate', type=int, default=512, help='Compression rate for RSCNet')
 	parser.add_argument('--num_frames', type=int, default=50, help='Number of frames for each sample')
-	parser.add_argument('--RecurrentBlock', type=int, default=256, help='Projection size for encoder')
+	parser.add_argument('--recurrent_block', type=int, default=256, help='Number of hidden units for recurrent block')
 
 	args = parser.parse_args()
 
@@ -42,8 +42,7 @@ def get_cfg():
 			'compression_rate': 500, # 1/500
 			'expansion':1,
 			'frames': args.num_frames,
-			'type': 'DCRNet',
-			'RecurrentBlock': args.RecurrentBlock,
+			'RecurrentBlock': args.recurrent_block,
 			'lambda1': 50
 		},
 		'seed': args.seed,
@@ -61,7 +60,7 @@ def main(cfg):
 	train_loader, validation_loader, test_loader = data_loader(cfg['dataset'], validation_split=cfg['validation_split'])	
 
 	if not cfg['debug']:
-		wandb_logger = WandbLogger(project='wcnc', log_model='all')
+		wandb_logger = WandbLogger(project='RSCNet', log_model='all')
 		checkpoint_callback = ModelCheckpoint(monitor="val_accuracy", mode="max", save_last=True, save_top_k=3)
 
 		wandb_logger.experiment.config.update(cfg)
