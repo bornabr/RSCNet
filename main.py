@@ -6,7 +6,7 @@ import wandb
 from pytorch_lightning.loggers import WandbLogger
 from pytorch_lightning.callbacks import ModelCheckpoint
 import numpy as np
-import argparselightning
+import argparse
 
 from dataset import data_loader
 from model import RSCNet
