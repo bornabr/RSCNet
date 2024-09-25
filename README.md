@@ -1,4 +1,4 @@
-## Abstract
+# Real-time Sensing and Compression Network
 This is the Pytorch implementation of [RSCNet: Dynamic CSI Compression for Cloud-based WiFi Sensing](https://arxiv.org/abs/2402.04888)
 
 ## Abstract
